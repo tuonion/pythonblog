@@ -33,8 +33,6 @@ urlpatterns = [
     url(r'^related_articles/$', views.related_articles, name='related_articles'),
     url(r'^get_prev_next_articles/$', views.get_prev_next_articles,
         name='get_prev_next_articles'),
-    
-    
     url(r'^add_reads/$', views.add_reads, name='add_reads'),
     url(r'^search/$', views.search, name='search'),
     url(r'^go_album/$', views.go_album, name='go_album'),
