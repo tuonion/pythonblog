@@ -65,7 +65,7 @@ a { color: #a6a6a6; text-decoration: none; transition: All 1s ease; -webkit-tran
 .arrow_box img:hover { opacity: 0.6; }
 .arrow_box p { line-height: 24px; padding: 0 20px 20px }
 .arrow_box p:hover { text-shadow: 1px 1px 1px #000; }
-.details { background: rgba(1,1,1,0.3); border-radius: 0 0 6px 6px; padding: 0 20px }
+.details { border-radius: 0 0 6px 6px; padding: 0 20px }
 .details li { line-height: 26px; display: inline; font-size: 11px; margin-right: 10px; }
 .details li a { color: #3F3E3C }
 .details li a:hover { color: #933 }
