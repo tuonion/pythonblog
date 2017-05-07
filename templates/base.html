@@ -27,98 +27,116 @@
 <script type="text/javascript" src="{% static 'js/silder.js'%}"></script>
 </head>
 <body>
+
+<div id="wechat">
+    <p>如果页面被重新排版导致无法正常使用，或加载太慢，<strong>请点击右上角按钮，选择在浏览器中打开</strong></p>
+</div>
+
 <div class="nav">
-  <ul>
-    <li><a href="/">网站首页</a></li>
-    <li><a href="/">技术博文</a>
-       <ul>
-			<li><a href="{% url  'show_one_category' category="C_CPP" %}">C与CPP</a></li>
-			<li><a href="{% url  'show_one_category' category="DS_ALGO" %}">数据结构与算法</a></li>
-			<li><a href="{% url  'show_one_category' category="OPE_SYS" %}">操作系统</a></li>
-			<li><a href="{% url  'show_one_category' category="COM_NET" %}">计算机网络</a></li>
+    <ul>
+        <li><a href="/">网站首页</a></li>
+        <li><a href="/">技术博文</a>
+        <ul>
+            <li><a href="{% url  'show_one_category' category="C与CPP" %}">C与CPP</a></li>
+            <li><a href="{% url  'show_one_category' category="数据结构与算法" %}">数据结构与算法</a></li>
+            <li><a href="{% url  'show_one_category' category="操作系统" %}">操作系统</a></li>
+            <li><a href="{% url  'show_one_category' category="计算机网络" %}">计算机网络</a></li>
         </ul>
-    </li>
-	<li><a href="{% url  'show_one_category' category="THINKING_LIFE" %}">生活随笔</a></li>
-  </ul>
+        </li>
+        <li><a href="{% url  'show_one_category' category="生活随笔" %}">生活随笔</a></li>
+    </ul>
 </div>
 <div id="mainbody">
 	<div class="info">
-		<figure><img src="{% static 'images/art0.jpg' %}" alt="Panama Hat" id="art_img">
-			<figcaption style="width:100%;"><strong>&nbsp;&nbsp;</strong>
-			<div> &nbsp;&nbsp;&nbsp;&nbsp;<label id="text_label">在书的扉页,你都会写些什么呢</label></br></br></br></br></div>
-			</figcaption>
-		</figure>
-		<div class="card">
-			<p>网名：土洋葱</p>
-			<p>职业：无业游民</p>
-			<p>Email：1107211209@qq.com</p>
-			<ul class="linkmore">
-				<li><a href="{% url 'go_album' %}" class="photos" title="生活照片"></a></li>
-                <!-- <li><a href="{% url 'go_email' %}" class="email" title="给我写信"></a></li> -->
-				<li><a href="/" class="email" title="给我写信"></a></li>
-				<li><a href="/" class="talk" title="给我留言"></a></li>
-				<li><a href="/" class="address" title="联系地址"></a></li>
-			</ul>
-		</div>
-	</div>
-	
-	<div class="blogs">
-		<ul class="bloglist">
-			{% block content %}
-			{% endblock %}
-		</ul>
-		<!--bloglist end-->
-		<aside>
-			<div class="search">
-				<form class="searchform" method="get" action="/search/">
-					<input type="text" name="key" value="Search" onfocus="this.value='C'" onblur="this.value='Search'">
-				</form>
-			</div>
-			<div class="tuijian">
-				<h2>推荐文章</h2>
-				<ol>
-					<li><span><strong>1</strong></span><a href="/"  class="hot_blog_a">--</a></li>
-					<li><span><strong>2</strong></span><a href="/"  class="hot_blog_a">--</a></li>
-					<li><span><strong>3</strong></span><a href="/"  class="hot_blog_a">--</a></li>
-					<li><span><strong>4</strong></span><a href="/"  class="hot_blog_a">--</a></li>
-					<li><span><strong>5</strong></span><a href="/"  class="hot_blog_a">--</a></li>
-					<li><span><strong>6</strong></span><a href="/"  class="hot_blog_a">--</a></li>
+        <figure><img src="{% static 'images/art0.jpg' %}" alt="Panama Hat" id="art_img">
+            <figcaption style="width:100%;"><strong>&nbsp;&nbsp;</strong>
+            <div> &nbsp;&nbsp;&nbsp;&nbsp;<label id="text_label">在书的扉页,你都会写些什么呢</label></br></br></br></br></div>
+            </figcaption>
+        </figure>
+        <div class="card">
+            <p>网&nbsp;&nbsp;名：土洋葱</p>
+            <p>年&nbsp;&nbsp;龄：18</p>
+            <p>职&nbsp;&nbsp;业：无业游民</p>
+            <p>邮&nbsp;&nbsp;箱：1107211209@qq.com</p>
+            <!--
+            <p>教育经历: 2011.09-2015.06: 厦大软件学院</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2015.09-2018.06：华科计算机学院</p>
+            -->
+            <p>兴趣爱好：球类，棋类，书法类</p>
+            </br>
+            <p>与有肝胆人共事，于无字句处读书</p>
+            <!--
+            <ul class="linkmore">
+                <li><a href="{% url 'go_album' %}" class="photos" title="生活照片"></a></li>
+                <li><a href="/" class="email" title="给我写信"></a></li>
+                <li><a href="/" class="talk" title="给我留言"></a></li>
+                <li><a href="/" class="address" title="联系地址"></a></li>
+            </ul>
+            -->
+        </div>
+    </div>
 
-				</ol>
-			</div>
-		</aside>
-	</div>
-	<!--blogs end-->
+    <div class="blogs">
+        <ul class="bloglist">
+            {% block content %}
+            {% endblock %}
+        </ul>
+        <!--bloglist end-->
+        <aside>
+            <div class="search">
+                <form class="searchform" method="get" action="/search/">
+                    <input type="text" name="key" value="Search" onfocus="this.value=''" onblur="this.value='Search'">
+                </form>
+            </div>
+            <div class="tuijian">
+                <h2>推荐文章</h2>
+                <ol>
+                    <li><span><strong>1</strong></span><a href="/"  class="hot_blog_a">--</a></li>
+                    <li><span><strong>2</strong></span><a href="/"  class="hot_blog_a">--</a></li>
+                    <li><span><strong>3</strong></span><a href="/"  class="hot_blog_a">--</a></li>
+                    <li><span><strong>4</strong></span><a href="/"  class="hot_blog_a">--</a></li>
+                    <li><span><strong>5</strong></span><a href="/"  class="hot_blog_a">--</a></li>
+                    <li><span><strong>6</strong></span><a href="/"  class="hot_blog_a">--</a></li>
+                    <li><span><strong>7</strong></span><a href="/"  class="hot_blog_a">--</a></li>
+                    <li><span><strong>8</strong></span><a href="/"  class="hot_blog_a">--</a></li>
+                    <li><span><strong>9</strong></span><a href="/"  class="hot_blog_a">--</a></li>
+                    <li><span><strong>10</strong></span><a href="/"  class="hot_blog_a">--</a></li>
+
+                </ol>
+            </div>
+        </aside>
+    </div>
+    <!--blogs end-->
 </div>
 <!--mainbody end-->
 <footer>
-	<div class="footer-mid">
-		<div class="flickr">
-			<h2>美图欣赏</h2>
-			<ul>
-				<li><a href="/"><img src="/static/images/01.jpg"></a></li>
-				<li><a href="/"><img src="/static/images/02.jpg"></a></li>
-				<li><a href="/"><img src="/static/images/03.jpg"></a></li>
-				<li><a href="/"><img src="/static/images/04.jpg"></a></li>
-				<li><a href="/"><img src="/static/images/05.jpg"></a></li>
-				<li><a href="/"><img src="/static/images/06.jpg"></a></li>
-				<li><a href="/"><img src="/static/images/07.jpg"></a></li>
-				<li><a href="/"><img src="/static/images/08.jpg"></a></li>
-				<li><a href="/"><img src="/static/images/09.jpg"></a></li>
-			</ul>
-		</div>
-		<div class="links">
-			<h2>友情链接</h2>
-			<ul>
-				<li><a href="/">TuOnion Blog</a></li>
-				<li><a href="/">CSDN</a></li>
-				<li><a href="/">Github</a></li>
-			</ul>
-		</div>
-	</div>
-	<div class="footer-bottom">
-		<p>Copyright 2013 Design by <a href="">TuOnion</a></p>
-	</div>
+    <div class="footer-mid">
+        <div class="flickr">
+            <h2>美图欣赏</h2>
+            <ul>
+                <li><a href="/"><img src="/static/images/01.jpg"></a></li>
+                <li><a href="/"><img src="/static/images/02.jpg"></a></li>
+                <li><a href="/"><img src="/static/images/03.jpg"></a></li>
+                <li><a href="/"><img src="/static/images/04.jpg"></a></li>
+                <li><a href="/"><img src="/static/images/05.jpg"></a></li>
+                <li><a href="/"><img src="/static/images/06.jpg"></a></li>
+                <li><a href="/"><img src="/static/images/07.jpg"></a></li>
+                <li><a href="/"><img src="/static/images/08.jpg"></a></li>
+                <li><a href="/"><img src="/static/images/09.jpg"></a></li>
+            </ul>
+        </div>
+        <div class="links">
+            <h2>友情链接</h2>
+            <ul>
+                <li><a href="/">TuOnion Blog</a></li>
+                <li><a href="/">CSDN</a></li>
+                <li><a href="/">Github</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>Copyright 2013 Design by <a href="">TuOnion</a></p>
+    </div>
 </footer>
 <!-- jQuery仿腾讯回顶部和建议 代码开始 -->
 <div id="tbox"><a id="gotop" href="javascript:void(0)"></a></div>
@@ -126,18 +144,27 @@
 </body>
 <script type="text/javascript">
 $(document).ready(function () {
-		/* 获取热评文章*/
-		var hot_blog_a=document.getElementsByClassName("hot_blog_a");
-		jQuery.post('/hot_articles/', function (result) {
-			$.each(result,function(i,item){
-				hot_blog_a[i].innerHTML=(item.title);
-				hot_blog_a[i].href=('/'+item.id+'/');
-			});
-		});
+        /* 获取热评文章*/
+        var hot_blog_a=document.getElementsByClassName("hot_blog_a");
+        jQuery.post('/hot_articles/', function (result) {
+            $.each(result,function(i,item){
+                hot_blog_a[i].innerHTML=(item.title);
+                hot_blog_a[i].href=('/'+item.id+'/');
+                });
+            });
 
-		var t1=window.setInterval(changePic,1000*5);
+        var t1=window.setInterval(changePic,1000*8);
+        });
 
-});
+$(document).ready(function(){
+        var ua = navigator.userAgent.toLowerCase();
+        if(ua.match(/MicroMessenger/i)=="micromessenger") {
+                $('#wechat').style.display = 'block';
+            }else {
+                $('#wechat').style.display = 'none';            
+            } 
+        });
+
 
 var num_pics=6;
 var index=0;
@@ -152,12 +179,23 @@ text_contents[4] = "在书的扉页，你都会写些什么呢"
 text_contents[5] = "我的嘴，其实很笨"
 
 function changePic(){
-	var img=document.getElementById("art_img");
-	var txt_label=document.getElementById("text_label");
-	var cur_index=index % num_pics;
-	img.src = path_prefix + cur_index + path_suffix;
-	txt_label.innerHTML=text_contents[cur_index];
-	index++;
+    var img=document.getElementById("art_img");
+    var txt_label=document.getElementById("text_label");
+    var cur_index=index % num_pics;
+    img.src = path_prefix + cur_index + path_suffix;
+    txt_label.innerHTML=text_contents[cur_index];
+    index++;
+}
+
+
+function isWeiXin(){
+    alert('In');
+    var ua = navigator.userAgent.toLowerCase();
+    if(ua.match(/MicroMessenger/i)=="micromessenger") {
+        return true;
+    } else {
+        return false;
+    }
 }
 </script>
 </html>

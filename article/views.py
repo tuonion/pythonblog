@@ -63,7 +63,7 @@ def archives(request):
 
 def hot_articles(request):
     try:
-        posts=(Article.objects.values('title','id').order_by("-reads")[:6])
+        posts=(Article.objects.values('title','id').order_by("-reads")[:10])
     except Article.DoesNotExist:
         raise Http404
     return HttpResponse(json.dumps(list(posts)),content_type="application/json")
@@ -120,9 +120,12 @@ def add_reads(request):
 
 def search(request):
     key = request.GET.get('key')
-    posts = Article.objects.filter(title__contains=str(key))
+    key = str(key).strip()
+    posts = Article.objects.filter(title__contains=key)
     paginator = Paginator(posts, 2)  # 每页显示两个
     page = request.GET.get('page')
+    if key=="":
+        key='所有文章'
     try:
         post_list = paginator.page(page)
     except PageNotAnInteger:
