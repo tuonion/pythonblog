@@ -100,6 +100,7 @@ aside div { box-shadow: 0px 1px 0px rgba(255,255,255,.1), inset 0px 1px 1px rgba
 /* search */
 .searchform { overflow: hidden; padding: 10px; }
 .searchform input { background: rgba(0, 0, 0, 0.25) url(../images/icons.png) no-repeat 3px -318px; border: 1px solid #111; width: 90%; line-height: 30px; color: #b9b9b9; padding-left: 30px; }
+#related_blogs {display:none;}
 
 /* --------------------------footer----------------------- */
 footer { background: rgba(0, 0, 0, 0.44); -webkit-box-shadow: 0 -1px 0 rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.09); -moz-box-shadow: 0 -1px 0 rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.09); box-shadow: 0 -1px 0 rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.09); }
